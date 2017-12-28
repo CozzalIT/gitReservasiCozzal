@@ -4,6 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+  require('proses/proses.php');
+?>
 
 <!DOCTYPE html>
 <html>
@@ -80,13 +83,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<form action="#" method="post" class="agile_form">
 										<div class="list_agileits_w3layouts">
 											<div class="section_class_agileits sec-left">
-												<select>
+												<select id="apartemen" name="apartemen">
 													<option value="0">-- Pilih Apartemen --</option>
-													<option value="1">Semua</option>
-													<option value="2">Gateway</option>
-													<option value="3">Jardin</option>
-													<option value="4">Metro The Suite</option>
-													<option value="5">Newton</option>
+													<option value="1">Semua Apartemen</option>
+													<?php
+											  	  $Proses = new Proses();
+							  				    $show = $Proses->showApartemen();
+							  				    while($data = $show->fetch(PDO::FETCH_OBJ)){
+													    echo "<option name='kd_apt' value='$data->kd_apt'>$data->nama_apt</option>";
+													  }
+												  ?>
 												</select>
 											</div>
 											<div class="section_class_agileits sec-right">
