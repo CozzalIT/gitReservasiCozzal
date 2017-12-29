@@ -1,0 +1,44 @@
+﻿header { background-color:#778899;padding-left: 10px;padding-top:1px;
+		height:87px;color:#F5FFFA;}
+
+ul {list-style-type: none;margin: 0;padding: 0;
+    overflow: hidden;background-color: #b0c4de;}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: #FFFAF0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	border-right: 1px solid #e6e6fa;
+}
+
+li a.active, li a:hover{
+	background-color: #87cefa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+	border: 1px solid #dcdcdc;
+}
+
+tr:nth-child(even){background-color: #F0FFFF}
+
+
+th {background-color: #add8e6;color:#191970;text-align:center;}
+td.atur {text-align:center;}
+a.tunjuk{text-decoration:none;color:black;}
+a.tunjuk:hover{text-decoration:underline;}
+.not{background-color:#B22222;color:white; width:100%; text-align:center; padding:10px 0 10px 0;}
+.laporan {background-color:#9370DB;width:100%; padding:10px 0 10px 0;
+		 text-align:center; color:white}
