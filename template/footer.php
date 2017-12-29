@@ -10,5 +10,3 @@
       });
     </script>
 <!-- 97-rgba(0, 0, 0, 0.75)/End-date-piker -->
-</body>
-</html>

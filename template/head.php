@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <head>
 
 	<title>Reservasi Cozzal</title>
@@ -14,8 +12,9 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 	<link href="css/font-awesome.css" rel="stylesheet">
-	<!-- Default-JavaScript-File --> <script type="text/javascript" src="js/jquery.min.js"></script>
-
+	<!-- Default-JavaScript-File -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/config.js"></script>
 	<!-- Web-Fonts -->
 		<link href='//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
