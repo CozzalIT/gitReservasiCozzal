@@ -1,11 +1,3 @@
-<?php
-  require('proses/proses.php');
-	include "template/head.php";
-?>
-<!DOCTYPE html>
-<html>
-<body>
-<<<<<<< HEAD
 
 	<h1>Reservasi Cozzal</h1>
 
@@ -96,17 +88,17 @@
 							</div>
 							<div class="tab-1 resp-tab-content">
 								<div class="register agileits">
-								  <form action="result.php" method="post" class="agile_form">
+								  <form action="#" method="post" class="agile_form">
 									  <div class="section_class_agileits sec-right">
-										  <input placeholder="Check in date" name="CI" class="date" id="datepicker3" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
-										  <input placeholder="Check out date" name="CO" class="date" id="datepicker4" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+										  <input placeholder="Check in date" class="date" id="datepicker3" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+										  <input placeholder="Check out date" class="date" id="datepicker4" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 										</div>
 										<div class="submit">
-										  <input type="submit" value="search" name="search">
+										  <input type="submit" value="search">
 										</div>
 									</form>
 								</div>
-								</div>
+							</div>
 							<div class="tab-1 resp-tab-content gallery-images">
 								<div class="wthree-subscribe">
 									<form action="#" method="post" class="agile_form">
@@ -124,11 +116,3 @@
 			</div>
 		</div>
 	</div>
-=======
->>>>>>> d962c4d221ca65f0a38f420cac07df1743c6c5fb
-<?php
-  include "page/home.php";
-  include "template/footer.php";
-?>
-</body>
-</html>
