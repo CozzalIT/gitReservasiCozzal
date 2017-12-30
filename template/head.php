@@ -11,6 +11,7 @@
 
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/table.css" type="text/css" media="all" />
 	<link href="css/font-awesome.css" rel="stylesheet">
 	<!-- Default-JavaScript-File -->
   <script type="text/javascript" src="js/jquery.min.js"></script>

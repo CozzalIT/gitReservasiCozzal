@@ -24,6 +24,24 @@ class Proses{
 	$query = $this->db->query($sql);
 	return $query;
   }
+  
+    public function Unitby_id($kd_unit){
+	$sql = "SELECT * FROM tb_unit, tb_apt 
+	where tb_apt.kd_apt=tb_unit.kd_apt and kd_unit='$kd_unit'";
+	$query = $this->db->query($sql);
+	return $query;
+  }
+  
+    public function addReservasi($kd_apt, $kd_unit, $no_tlp, $check_in, $check_out){
+	$sql = "INSERT INTO tb_reservasi (kd_unit, kd_apt, check_in, check_out, no_tlp) 
+	VALUES ('$kd_unit', '$kd_apt', '$check_in', '$check_out', '$no_tlp')";
+	$query = $this->db->query($sql);
+	if(!$query){
+	  return "Failed";
+	}else{
+	  return "Success";
+	}
+  }
 
 } 
 ?>

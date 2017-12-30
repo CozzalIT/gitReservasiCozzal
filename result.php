@@ -14,9 +14,9 @@ function Ada($str1,$str2)
 if(isset($_POST['search']))
 {
 	
+include "template/head.php";
+	
 	echo '
-<meta charset=utf-8>
-<link href="style.css" rel="stylesheet" type="text/css" media="all" />
 <body>
 <header> <h1>Data Unit Tersedia</h1> </header>
 <br>
@@ -45,7 +45,7 @@ if(isset($_POST['search']))
 								<td>$data2->nama_apt</td>
 								<td>$data2->alamat_apt</td>
 								<td>
-									<a class='btn btn-primary' href='#'>Booking Sekaranng</a>
+									<a class='btnn' href='booking.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
 								</td>
 								</tr>";	
 					}
