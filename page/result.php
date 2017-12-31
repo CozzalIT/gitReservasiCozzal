@@ -24,7 +24,7 @@ include "template/head.php";
 <br>
 <table>
 	<tr><th>No Unit</th><th>Nama Apartemen</th><th>Alamat</th><th>Action</th></tr>';
-				  
+
 				  $Proses = new Proses();
 				  $CI2 = explode("/",$_POST['CI']);
 				  $CO2 = explode("/",$_POST['CO']);
@@ -45,7 +45,7 @@ include "template/head.php";
 								<td>$data2->nama_apt</td>
 								<td>$data2->alamat_apt</td>
 								<td>
-									<a class='btnn' href='booking.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
+									<a class='btnn' href='index.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
 								</td>
 								</tr>";
 					}

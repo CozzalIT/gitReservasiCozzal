@@ -1,14 +1,8 @@
 <?php
-	
-	if(isset($_GET['tci'])&&isset($_GET['tco'])&&isset($_GET['id']))
-	{
-	include "template/head.php";
 echo '
 <!DOCTYPE html>
 <html>
 <body>
-<<<<<<< HEAD
-
 	<h1>Reservasi Cozzal</h1>
 
 	<div class="container">
@@ -31,7 +25,7 @@ echo '
 								$name.text($tab.text());
 								$info.show();
 							}
-						}); 
+						});
 
 						$("#verticalTab").easyResponsiveTabs({
 							type: "vertical",
@@ -46,7 +40,7 @@ echo '
 						<div class="w3l-sign-in">
 									<form action="proses/proses_add.php" method="post" class="agile_form">
 										<div class="list_agileits_w3layouts"> ';
-										require('proses/proses.php');
+								
 										 $CI =
 										 $Proses = new Proses();
 										 $show = $Proses->Unitby_id($_GET['id']);
@@ -55,23 +49,23 @@ echo '
 										 <input type="text" name="kd_unit" value="'.$_GET['id'].'" class="hiden"/>
 										 <input type="text" name="kd_apt" value="'.$edit->kd_apt.'" class="hiden"/>
 											<div class="section_class_agileits sec-right">
-											  <label class="label">No Unit</label> 
+											  <label class="label">No Unit</label>
 											  <input type="text" name="no_unit" class="name agileits" value="'.$edit->no_unit.'" required="" disabled/>
 											</div>
 											<div class="section_class_agileits sec-right">
-											  <label class="label">Nama Apartemen</label> 
+											  <label class="label">Nama Apartemen</label>
 											  <input type="text"  name="nama_apt" class="name agileits" value="'.$edit->nama_apt.'" required="" disabled/>
 											</div>
 											<div class="section_class_agileits sec-right">
-											  <label class="label">Check In</label> 
+											  <label class="label">Check In</label>
 											  <input type="text" name="CI" class="name agileits" value="'.$_GET['tci'].'" required="" />
 											</div>
 											<div class="section_class_agileits sec-right">
-											  <label class="label">Check Out</label> 
+											  <label class="label">Check Out</label>
 											  <input type="text" name="CO" class="name agileits" value="'.$_GET['tco'].'" required="" />
 											</div>
 											<div class="section_class_agileits sec-right">
-											  <label class="label">Whatsapp</label> 
+											  <label class="label">Whatsapp</label>
 											  <input type="text" placeholder="Phone Number / Whatsapp" name="no_tlp" class="name agileits" required=""/>
 											</div>
 											<div class="submit">
@@ -86,10 +80,5 @@ echo '
 			</div>
 		</div>
 	</div>
-=======
 ';
-  include "template/footer.php";
-} 
 ?>
-</body>
-</html>
