@@ -87,7 +87,7 @@
 						</div>
 						<div class="tab-1 resp-tab-content">
 							<div class="register agileits">
-								<form action="result.php" method="post" class="agile_form">
+								<form action="" method="post" class="agile_form">
 									<div class="section_class_agileits sec-right">
 										<input placeholder="Check in date" name="CI" class="date" id="datepicker3" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 										<input placeholder="Check out date" name="CO" class="date" id="datepicker4" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>

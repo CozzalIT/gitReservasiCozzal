@@ -6,7 +6,13 @@
 <html>
 <body>
 <?php
-  include "page/home.php";
+  if(!isset($_POST['search'])){
+    include "page/home.php";
+  }
+  else {
+    include "page/result.php";
+  };
+
   include "template/footer.php";
 ?>
 </body>

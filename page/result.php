@@ -5,7 +5,7 @@ function Ada($str1,$str2)
 	$ar = explode("+",$str1);
 	$h = count($ar)-1;
     for($i=0;$i<$h;$i++)
-	{ 
+	{
 		if($str2==$ar[$i])
 			return "Benar";
 	}
@@ -13,9 +13,9 @@ function Ada($str1,$str2)
 
 if(isset($_POST['search']))
 {
-	
+
 include "template/head.php";
-	
+
 	echo '
 <body>
 <header> <h1>Data Unit Tersedia</h1> </header>
@@ -24,10 +24,10 @@ include "template/head.php";
 <br>
 <table>
 	<tr><th>No Unit</th><th>Nama Apartemen</th><th>Alamat</th><th>Action</th></tr>';
-				  require("proses/proses.php");
+				  
 				  $Proses = new Proses();
 				  $CI2 = explode("/",$_POST['CI']);
-				  $CO2 = explode("/",$_POST['CO']); 
+				  $CO2 = explode("/",$_POST['CO']);
 				  $CI=$CI2[2]."-".$CI2[0]."-".$CI2[1];
 				  $CO=$CO2[2]."-".$CO2[0]."-".$CO2[1];
 				  $show = $Proses->showTransaksi($CI,$CO);
@@ -47,10 +47,10 @@ include "template/head.php";
 								<td>
 									<a class='btnn' href='booking.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
 								</td>
-								</tr>";	
+								</tr>";
 					}
-				  }; 
-				  echo "	
+				  };
+				  echo "
 </table>
 </section>
 </body>
