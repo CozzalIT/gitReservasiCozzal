@@ -48,8 +48,8 @@
 									<div class="list_agileits_w3layouts">
 										<div class="section_class_agileits sec-left">
 											<select id="apartemen" name="apartemen">
-												<option value="0">-- Pilih Apartemen --</option>
-												<option value="1">Semua Apartemen</option>
+												<option value="">-- Pilih Apartemen --</option>
+												<option value="">Semua Apartemen</option>
 												<?php
 													$Proses = new Proses();
 													$show = $Proses->showApartemen();
@@ -60,13 +60,12 @@
 											</select>
 										</div>
 										<div class="section_class_agileits sec-right">
-											<select>
+											<select name="unit" id="unit">
 												<option value="0">-- Pilih Unit --</option>
-												<option value="1">12BD - Newton</option>
-												<option value="3">18BF - Newton</option>
-												<option value="2">A123 - Metro The Suite</option>
-												<option value="1">A10 - Gateway</option>
 											</select>
+											<!--<div id="loading" style="margin-top: 15px;">
+												<img src="images/loading.gif" width="18"> <small>Loading...</small>
+											</div>-->
 										</div>
 										<div class="clear"></div>
 									</div>
