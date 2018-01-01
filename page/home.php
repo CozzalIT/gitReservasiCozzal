@@ -49,7 +49,7 @@
 										<div class="section_class_agileits sec-left">
 											<select id="apartemen" name="apartemen">
 												<option value="">-- Pilih Apartemen --</option>
-												<option value="">Semua Apartemen</option>
+												<option value="0">Semua Apartemen</option>
 												<?php
 													$Proses = new Proses();
 													$show = $Proses->showApartemen();

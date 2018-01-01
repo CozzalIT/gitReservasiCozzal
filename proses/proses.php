@@ -4,15 +4,6 @@ class Proses{
     $this->db = new PDO('mysql:host=localhost;dbname=db_keuangan_cozzal','root','');
   }
 
-  public function editUnit($kd_apt){
-	$sql = "SELECT * from tb_unit
-	INNER JOIN tb_apt ON tb_apt.kd_apt = tb_unit.kd_apt
-	INNER JOIN tb_owner ON tb_owner.kd_owner = tb_unit.kd_owner
-	where kd_apt='$kd_apt'";
-	$query = $this->db->query($sql);
-	return $query;
-  }
-
   public function showApartemen(){
 	  $sql = "SELECT * FROM tb_apt";
 	  $query = $this->db->query($sql);
@@ -27,9 +18,17 @@ class Proses{
 	return $query;
   }
 
+  //public function showUnit(){
+	//$sql = "SELECT * FROM tb_unit
+	//INNER JOIN tb_apt ON tb_apt.kd_apt = tb_unit.kd_apt
+	//INNER JOIN tb_owner ON tb_owner.kd_owner = tb_unit.kd_owner";
+	//$query = $this->db->query($sql);
+	//return $query;
+  //}
+
     public function showUnit(){
 	$sql = "SELECT * FROM tb_unit, tb_apt
-	where tb_apt.kd_apt=tb_unit.kd_apt";
+	where tb_apt.kd_apt=tb_unit.kd_apt ORDER BY tb_apt.kd_apt";
 	$query = $this->db->query($sql);
 	return $query;
   }
