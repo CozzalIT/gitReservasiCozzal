@@ -28,7 +28,7 @@ include "template/head.php";
 				  $Proses = new Proses();
 				  $CI2 = explode("/",$_POST['CI']);
 				  $CO2 = explode("/",$_POST['CO']);
-				  $CI=$CI2[2]."-".$CI2[0]."-".$CI2[1];
+				  $CI=$CI2[2]."-".$CI2[0]."-".$CI2[1]; //YYYY-MM-DD
 				  $CO=$CO2[2]."-".$CO2[0]."-".$CO2[1];
 				  $show = $Proses->showTransaksi($CI,$CO);
 				  $str = ""; echo $str;
