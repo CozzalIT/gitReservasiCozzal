@@ -3,7 +3,7 @@
 function Ada($str1,$str2)
 {
 	$ar = explode("+",$str1);
-	$h = count($ar)-1;
+	$h = count($ar);
     for($i=0;$i<$h;$i++)
 	{
 		if($str2==$ar[$i])
@@ -12,8 +12,7 @@ function Ada($str1,$str2)
 }
 
 if(isset($_POST['search']))
-{
-
+{ 
 	echo '
 <body>
 <header> <h1>Data Unit Tersedia</h1> </header>
@@ -29,7 +28,7 @@ if(isset($_POST['search']))
 				  $CI=$CI2[2]."-".$CI2[0]."-".$CI2[1]; //YYYY-MM-DD
 				  $CO=$CO2[2]."-".$CO2[0]."-".$CO2[1];
 				  $show = $Proses->showTransaksi($CI,$CO);
-				  $str = ""; echo $str;
+				  $str = "0"; 
 				  while($data = $show->fetch(PDO::FETCH_OBJ)){
 						$str= $str."+".$data->kd_unit;
 				  };

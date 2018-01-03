@@ -23,7 +23,7 @@ class Proses{
   }
 
   public function showTransaksi($CI,$CO){
-	$sql = "SELECT tb_transaksi.kd_unit from tb_transaksi where (check_in<='$CI' and check_out>='$CO')
+	$sql = "SELECT * from tb_transaksi where (check_in<='$CI' and check_out>='$CO')
 	or (check_in>='$CI' and check_in<='$CO')
 	or (check_out>='$CI' and check_out<='$CO')" ;
 	$query = $this->db->query($sql);
