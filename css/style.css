@@ -85,6 +85,22 @@ h1 {
 	margin: 48px 0;
 }
 
+h1.notice {
+    font-size: 31px;
+    font-weight: 600;
+    text-align: center;
+    color: #FFF;
+    margin: 0;
+}
+
+h1.icon {
+    font-size: 150px;
+    font-weight: 600;
+    text-align: center;
+    color: #FFFC00;
+    margin: 0;
+}
+
 .container {
 	width: 36%;
 	margin: 0 auto;
@@ -94,6 +110,16 @@ h1 {
     padding: 1.5em;
     min-height: 200px;
 }
+
+.tabs-konfirmasi {
+    background-color: rgba(176, 107, 19, 0.2);
+    padding: 1.5em;
+    min-height: 200px;
+    background-color: rgba(18, 11, 2, 0.94);
+    padding: 1.5em;
+    min-height: 200px;
+}
+
 .tab-left {
     width: 36%;
     float: left;

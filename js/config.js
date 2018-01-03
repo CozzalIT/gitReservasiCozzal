@@ -23,7 +23,7 @@ $(document).ready(function(){ // Ketika halaman sudah siap (sudah selesai di loa
 					// set isi dari combobox unit
 					// lalu munculkan kembali combobox unitnya
 					$("#unit").html(response.data_unit).show();
-				}, 50);
+				}, 0);
 			},
 			error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
 				alert(thrownError); // Munculkan alert error

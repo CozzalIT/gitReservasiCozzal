@@ -44,7 +44,7 @@
 					<div class="resp-tabs-container">
 						<div class="tab-1 resp-tab-content">
 							<div class="w3l-sign-in">
-								<form action="#" method="post" class="agile_form">
+								<form action="" method="post" class="agile_form">
 									<div class="list_agileits_w3layouts">
 										<div class="section_class_agileits sec-left">
 											<select id="apartemen" name="apartemen">
@@ -54,7 +54,7 @@
 													$Proses = new Proses();
 													$show = $Proses->showApartemen();
 													while($data = $show->fetch(PDO::FETCH_OBJ)){
-														echo "<option name='kd_apt' value='$data->kd_apt'>$data->nama_apt</option>";
+														echo "<option value='$data->kd_apt'>$data->nama_apt</option>";
 													}
 												?>
 											</select>
@@ -70,8 +70,8 @@
 										<div class="clear"></div>
 									</div>
 									<!-- <label class="label">Check In</label> -->
-									<input placeholder="Check In" class="date" id="check_in" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
-									<input placeholder="Check Out" class="date" id="check_out" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+									<input placeholder="Check In" class="date" id="check_in" name="check_in" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+									<input placeholder="Check Out" class="date" id="check_out" name="check_out" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 									<div class="list_agileits_w3layouts">
 										<div class="section_class_agileits sec-right">
 											<input type="text" placeholder="Phone Number / Whatsapp" name="name" class="name agileits" required=""/>
@@ -79,7 +79,7 @@
 										<div class="clear"></div>
 									</div>
 									<div class="submit">
-										<input type="submit" value="Kirim Permintaan">
+										<input type="submit" name="permintaan" value="Kirim Permintaan">
 									</div>
 								</form>
 							</div>

@@ -14,8 +14,6 @@ function Ada($str1,$str2)
 if(isset($_POST['search']))
 {
 
-include "template/head.php";
-
 	echo '
 <body>
 <header> <h1>Data Unit Tersedia</h1> </header>
