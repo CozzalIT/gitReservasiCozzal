@@ -6,7 +6,7 @@
 <html>
 <body>
 <?php
-  if(!isset($_GET['tci']) && (!isset($_GET['tco'])) && (!isset($_GET['id'])) && (!isset($_POST['search'])) && (!isset($_POST['permintaan']))) {
+  if(!isset($_GET['tci']) && (!isset($_GET['tco'])) && (!isset($_GET['id'])) && (!isset($_POST['search'])) && (!isset($_POST['permintaan'])) && !(isset($_GET['succes']))) {
     include "page/home.php";
   }
 
@@ -19,9 +19,13 @@
   };
 
   if (isset($_POST['permintaan'])) {
-    include "page/konfirmasi.php";
+    include "proses/cek.php";
   }
-
+  
+  if (isset($_GET['succes'])) {
+   include "page/succes.php";
+  }
+  
   include 'template/modal.php';
   include "template/footer.php";
 ?>

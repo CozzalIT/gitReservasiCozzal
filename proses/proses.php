@@ -44,9 +44,9 @@ class Proses{
 	return $query;
   }
 
-  public function addReservasi($kd_apt, $kd_unit, $no_tlp, $check_in, $check_out){
-	$sql = "INSERT INTO tb_reservasi (kd_unit, kd_apt, check_in, check_out, no_tlp)
-	VALUES ('$kd_unit', '$kd_apt', '$check_in', '$check_out', '$no_tlp')";
+  public function addReservasi($kd_apt, $kd_unit, $no_tlp, $check_in, $check_out, $nama){
+	$sql = "INSERT INTO tb_reservasi (kd_unit, kd_apt, check_in, check_out, no_tlp, nama)
+	VALUES ('$kd_unit', '$kd_apt', '$check_in', '$check_out', '$no_tlp', '$nama')";
 	$query = $this->db->query($sql);
 	if(!$query){
 	  return "Failed";

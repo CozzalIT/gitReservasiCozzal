@@ -10,6 +10,7 @@
 	<!-- //For-Mobile-Apps -->
 
 	<!--Baru-->
+	<link rel="stylesheet" href="css/number.css" type="text/css" media="all" />
 	<!--//Baru-->
 
 	<!-- Style -->
@@ -19,6 +20,7 @@
 	<!-- Default-JavaScript-File -->
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/config.js"></script>
+  <script type="text/javascript" src="js/validasi_tanggal.js"></script>
 	<script src="js/sweetalert.min.js"></script>
 	<!-- Web-Fonts -->
 		<link href='//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800' rel='stylesheet' type='text/css'>

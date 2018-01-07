@@ -40,8 +40,8 @@ echo '
 						<div class="w3l-sign-in">
 									<form action="proses/proses_add.php" method="post" class="agile_form">
 										<div class="list_agileits_w3layouts"> ';
-								
-										 $CI =
+										 $ChI = explode("-",$_GET['tci']);
+										 $ChO = explode("-",$_GET['tco']);
 										 $Proses = new Proses();
 										 $show = $Proses->Unitby_id($_GET['id']);
 										 $edit = $show->fetch(PDO::FETCH_OBJ);
@@ -58,13 +58,19 @@ echo '
 											</div>
 											<div class="section_class_agileits sec-right">
 											  <label class="label">Check In</label>
-											  <input type="text" name="CI" class="name agileits" value="'.$_GET['tci'].'" required="" />
+											  <input type="text" name="CI_P" class="name agileits" value="'.$ChI[1]."/".$ChI[2]."/".$ChI[0].'" disabled required="" />
 											</div>
 											<div class="section_class_agileits sec-right">
 											  <label class="label">Check Out</label>
-											  <input type="text" name="CO" class="name agileits" value="'.$_GET['tco'].'" required="" />
+											  <input type="text" name="CO_P" class="name agileits" value="'.$ChO[1]."/".$ChO[2]."/".$ChO[0].'" disabled required="" />
 											</div>
+											  <input type="text" name="CI" class="name agileits" value="'.$_GET['tci'].'" style="display:none" />	
+											  <input type="text" name="CO" class="name agileits" value="'.$_GET['tco'].'" style="display:none" />
 											<div class="section_class_agileits sec-right">
+											  <label class="label">Nama Lengkap</label>
+											  <input type="text" placeholder="Nama Lengkap" name="nama" class="name agileits" required=""/>
+											</div>
+											  <div class="section_class_agileits sec-right">
 											  <label class="label">Whatsapp</label>
 											  <input type="text" placeholder="Phone Number / Whatsapp" name="no_tlp" class="name agileits" required=""/>
 											</div>

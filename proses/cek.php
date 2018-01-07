@@ -20,19 +20,16 @@
           if (($data->check_in <= $check_in_mod and $data->check_out >= $check_out_mod)
             or ($data->check_in >= $check_in_mod and $data->check_in <= $check_out_mod)
             or ($data->check_out >= $check_in_mod and $data->check_out <= $check_out_mod) ){
-              echo "
-                <h1 class='icon'><i class='fa fa-warning' aria-hidden='true'></i></h1><br><h1 class='notice'>Unit tidak tersedia! Silakan pilih tanggal atau unit lain</h1>
-              ";
               $hasil = "Terisi";
           }
         }
         if ($hasil == "Kosong"){
-          echo '<h1 class="icon"><i class="fa fa-refresh fa-spin" aria-hidden="true"></i><h1 class="notice">Permintaan dikirim!<br>Silahkan tunggu konfirmasi</h1>';
-        }
-		else
-		{
-				
-		}	
+          header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit);    
+		  }
+		  else  
+		  echo "
+                <h1 class='icon'><i class='fa fa-warning' aria-hidden='true'></i></h1><br><h1 class='notice'>Unit tidak tersedia! Silakan pilih tanggal atau unit lain</h1>
+               ";
 
         ?>
 
