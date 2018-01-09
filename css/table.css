@@ -1,7 +1,9 @@
 ﻿table {
     border-collapse: collapse;
-    width: 75%; 
-	margin-left: 20px;
+    width: 75%;
+    
+    margin-right: 80px;
+    margin-left:80px;
 }
 
 th, td {
@@ -19,3 +21,8 @@ td {text-align:center;}
 .btnn{text-decoration:none;color:white; padding: 5px 15px 5px 15px; background-color:#602000;}
 .btnn:hover{text-decoration:none;color:white; padding: 3px 10px 3px 10px; background-color:#804000;}
 .hiden{display:none;}
+.keterangan{
+    margin-right: 150px;
+   margin-top:10px;  margin-left:80px;
+   color:red;  padding-left=20px; padding-top=20px;padding-buttom=20px;
+   background-color:black;}

@@ -55,6 +55,7 @@ if(isset($_POST['search']))
 				  echo "
 </table>
 </section>
+<div class='keterangan'> *Total harga meliputi total biaya sewa ditambah ekstra charge </div>
 </body>
 </html>";
 }

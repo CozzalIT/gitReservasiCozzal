@@ -21,7 +21,10 @@
 							$info.show();
 						}
 					});
+					
 
+					if ($('#F').val()=="True") swal("Permintaan dikirim","Silahkan tunggu balasan dari kami","success");
+					
 					$('#verticalTab').easyResponsiveTabs({
 						type: 'vertical',
 						width: 'auto',
@@ -56,8 +59,9 @@
 													while($data = $show->fetch(PDO::FETCH_OBJ)){
 														echo "<option value='$data->kd_apt'>$data->nama_apt</option>";
 													}
+													echo '<input type="text" name="day" id="F" style="display:none" value='.$GLOBALS['hasilbooking'].' disabled />
+													</select>';
 												?>
-											</select>
 										</div>
 										<div class="section_class_agileits sec-right">
 											<select name="unit" id="unit">
@@ -90,6 +94,7 @@
 									<div class="section_class_agileits sec-right">
 										<input placeholder="Check in date" name="CI" class="date" id="datepicker3" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 										<input placeholder="Check out date" name="CO" class="date" id="datepicker4" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+										<input type="text" name="day" class="name agileits" id="jumlah_hari" disabled />
 										<input type="number" placeholder="Jumlah Tamu" name="jumlah_tamu" min="1" class="number1" required=""/>
 									</div>
 									<div class="submit">

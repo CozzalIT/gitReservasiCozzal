@@ -1,5 +1,27 @@
 $(document).ready(function(){ 
 
+$("#jumlah_hari").hide();
+ii=0; //flag utuk menentukan apakah jumlah hari sudah di show atau belum
+
+function jumharshow()
+{
+	var a = $("#datepicker3").val();a = a.split('/');
+	var b = $("#datepicker4").val();
+	if (b!='')
+	{
+		b = b.split('/');
+		var CI = new Date(a[2]+'-'+a[0]+'-'+a[1]);
+		var CO = new Date(b[2]+'-'+b[0]+'-'+b[1]);
+		var s = new Date(CI).getTime();
+		var z = new Date(CO).getTime();
+		x = z-s;
+		x = x/86400000;
+		$("#jumlah_hari").val(x+' hari');
+		if (ii==0)
+		$("#jumlah_hari").show(); ii=1;
+	} else { $("#jumlah_hari").hide(); ii=0;}
+}
+
 function nilaitanggal(t, b)
 {
 	t.setDate(t.getDate()+b);
@@ -25,7 +47,7 @@ function nilaitanggal(t, b)
 			$("#datepicker3").val(nilaitanggal(sekarang,0));
 			c_tgl_co = sekarang;
 		}
-		$("#datepicker4").val(nilaitanggal(c_tgl_co,1));
+		$("#datepicker4").val(nilaitanggal(c_tgl_co,1));jumharshow();
     });
 	
 	$("#datepicker4").change(function(){
@@ -46,5 +68,6 @@ function nilaitanggal(t, b)
 			swal("","Isi terlebih dahulu check in","error");
 			$("#datepicker4").val("");
 		}
+		jumharshow();
     });
 });
