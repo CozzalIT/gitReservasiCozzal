@@ -1,12 +1,12 @@
 $(document).ready(function(){ 
 
 $("#jumlah_hari").hide();
-ii=0; //flag utuk menentukan apakah jumlah hari sudah di show atau belum
+$("#jumlah_harii2").hide();
 
-function jumharshow()
+function jumharshow(i,o,j) // i = #datepicker3 atau #check_in ; o = #datepicker4 atau #check_out; j = #jumlah_hari/#jumlah_hari2 
 {
-	var a = $("#datepicker3").val();a = a.split('/');
-	var b = $("#datepicker4").val();
+	var a = $(i).val();a = a.split('/');
+	var b = $(o).val();
 	if (b!='')
 	{
 		b = b.split('/');
@@ -16,10 +16,9 @@ function jumharshow()
 		var z = new Date(CO).getTime();
 		x = z-s;
 		x = x/86400000;
-		$("#jumlah_hari").val(x+' hari');
-		if (ii==0)
-		$("#jumlah_hari").show(); ii=1;
-	} else { $("#jumlah_hari").hide(); ii=0;}
+		$(j).val(x+' hari');
+		$(j).show(); 
+	} else $(j).hide(); 
 }
 
 function nilaitanggal(t, b)
@@ -32,9 +31,9 @@ function nilaitanggal(t, b)
 	return bln+'/'+hr+'/'+thn;
 }
 
-
-    $("#datepicker3").change(function(){
-		var a = $("#datepicker3").val();
+function gantiCI(i,o,j)
+{
+		var a = $(i).val();
 		a = a.split('/');
 		var tgl_ci = new Date(a[2]+'-'+a[0]+'-'+a[1]);
 		var sekarang  = new Date();
@@ -44,30 +43,50 @@ function nilaitanggal(t, b)
 		if (tgl_ci<sekarang)
 		{
 			swal("","Tanggal Check in tidak boleh kurang dari hari ini","error");
-			$("#datepicker3").val(nilaitanggal(sekarang,0));
+			$(i).val(nilaitanggal(sekarang,0));
 			c_tgl_co = sekarang;
 		}
-		$("#datepicker4").val(nilaitanggal(c_tgl_co,1));jumharshow();
-    });
+		$(o).val(nilaitanggal(c_tgl_co,1));jumharshow(i,o,j);
+}
+
 	
-	$("#datepicker4").change(function(){
-		if ($("#datepicker3").val()!="")
+function gantiCO(i,o,j)
+{
+		if ($(i).val()!="")
 		{
-			var a = $("#datepicker3").val();a = a.split('/');
-			var b = $("#datepicker4").val();b = b.split('/');
+			var a = $(i).val();a = a.split('/');
+			var b = $(o).val();b = b.split('/');
 			var CI = new Date(a[2]+'-'+a[0]+'-'+a[1]);
 			var CO = new Date(b[2]+'-'+b[0]+'-'+b[1]);
 			if (CO<=CI)
 			{
 			swal("Tanggal Check Out tidak valid","Pilih tanggal setelah check in","error");			
-			$("#datepicker4").val("");
+			$(o).val("");
 			}
 		}
 		else 
 		{
 			swal("","Isi terlebih dahulu check in","error");
-			$("#datepicker4").val("");
+			$(o).val("");
 		}
-		jumharshow();
-    });
+		jumharshow(i,o,j);
+	
+}	
+    $("#datepicker3").change(function(){
+		gantiCI("#datepicker3","#datepicker4","#jumlah_hari");
+	});
+	
+    $("#check_in").change(function(){
+		gantiCI("#check_in","#check_out","#jumlah_harii2");
+	});	
+	
+	$("#datepicker4").change(function(){
+       gantiCO("#datepicker3","#datepicker4","#jumlah_hari");
+	});
+
+	$("#check_out").change(function(){
+       gantiCO("#check_in","#check_out","#jumlah_harii2");
+	});
+	
+	
 });

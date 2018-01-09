@@ -50,7 +50,7 @@
 								<form action="" method="post" class="agile_form">
 									<div class="list_agileits_w3layouts">
 										<div class="section_class_agileits sec-left">
-											<select id="apartemen" name="apartemen">
+											<select id="apartemen" name="apartemen" required="">
 												<option value="">-- Pilih Apartemen --</option>
 												<option value="0">Semua Apartemen</option>
 												<?php
@@ -64,7 +64,7 @@
 												?>
 										</div>
 										<div class="section_class_agileits sec-right">
-											<select name="unit" id="unit">
+											<select name="unit" id="unit" required="">
 												<option value="0">-- Pilih Unit --</option>
 											</select>
 											<!--<div id="loading" style="margin-top: 15px;">
@@ -76,6 +76,7 @@
 									<!-- <label class="label">Check In</label> -->
 									<input placeholder="Check In" class="date" id="check_in" name="check_in" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 									<input placeholder="Check Out" class="date" id="check_out" name="check_out" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+									<input type="text" name="day" class="name agileits" id="jumlah_harii2" disabled />
 									<div class="list_agileits_w3layouts">
 										<div class="section_class_agileits sec-right">
 											
