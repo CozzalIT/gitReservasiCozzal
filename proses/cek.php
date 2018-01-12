@@ -8,6 +8,7 @@
 			<div class="tabs-konfirmasi">
         <?php
         $unit = $_POST['unit'];
+		$apt = $_POST['apartemen'];
 
         $check_in = explode("/",$_POST['check_in']);
         $check_out = explode("/",$_POST['check_out']);
@@ -15,7 +16,7 @@
         $check_out_mod = $check_out[2]."-".$check_out[0]."-".$check_out[1];
 
         $Proses = new Proses(); $hasil = "Kosong";
-        $show = $Proses->showTransaksiUnit($unit);
+        $show = $Proses->showTransaksiUnit($unit,$apt);
         while($data = $show->fetch(PDO::FETCH_OBJ)){
           if (($data->check_in <= $check_in_mod and $data->check_out >= $check_out_mod)
             or ($data->check_in >= $check_in_mod and $data->check_in <= $check_out_mod)
@@ -24,7 +25,10 @@
           }
         }
         if ($hasil == "Kosong"){
-          header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit);    
+          if ($unit==0)
+		  header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit.'&kd_apt='.$apt);    
+		  else
+		  header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit);
 		  }
 		  else  
 		  echo "

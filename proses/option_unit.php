@@ -20,7 +20,7 @@ if ($kd_apt == 0){
 else{
 	// Set defaultnya dengan tag option Pilih
 	$html = "<option value=''>-- Pilih Unit --</option>";
-
+	$html .= "<option name='kd_unit' value='0'>Semua Unit</option>";
 	$Proses = new Proses();
 	$show = $Proses->showUnit();
 	while($data = $show->fetch(PDO::FETCH_OBJ)){

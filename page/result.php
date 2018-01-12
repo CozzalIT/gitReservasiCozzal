@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-function Ada($str1,$str2)
+function booked($str1,$str2)
 {
 	$ar = explode("+",$str1);
 	$h = count($ar);
@@ -29,13 +29,13 @@ if(isset($_POST['search']))
 				  $CO=$CO2[2]."-".$CO2[0]."-".$CO2[1];
 				  $jumlah_hari = (strtotime($CO) - strtotime($CI))/86400;
 				  $show = $Proses->showTransaksi($CI,$CO);
-				  $str = "0"; 
+				  $str = "_"; 
 				  while($data = $show->fetch(PDO::FETCH_OBJ)){
 						$str= $str."+".$data->kd_unit;
 				  };
 				  $show2 = $Proses->showUnit();
 				  while($data2 = $show2->fetch(PDO::FETCH_OBJ)){
-					if (Ada($str,$data2->kd_unit)!="Benar")
+					if (booked($str,$data2->kd_unit)!="Benar")
 					{
 						$ec=0; if($_POST['jumlah_tamu']>5) $ec=$_POST['jumlah_tamu']-5; //ec = orag yg dhitung ektra charge
 						if ($week>5) $harga_sewa = $data2->h_sewa_we; else $harga_sewa = $data2->h_sewa_wd;

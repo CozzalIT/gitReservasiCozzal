@@ -5,7 +5,7 @@ class Proses{
   }
 
   public function showApartemen(){
-	  $sql = "SELECT * FROM tb_apt";
+	  $sql = "SELECT * FROM tb_apt where kd_apt!=0";
 	  $query = $this->db->query($sql);
 	  return $query;
   }
@@ -16,8 +16,8 @@ class Proses{
 	  return $query;
   }
 
-  public function showTransaksiUnit($kd_unit){
-    $sql = "SELECT * from tb_transaksi where kd_unit='$kd_unit'";
+  public function showTransaksiUnit($kd_unit, $kd_apt){
+    $sql = "SELECT * from tb_transaksi where kd_unit='$kd_unit' and kd_apt='$kd_apt'";
     $query = $this->db->query($sql);
     return $query;
   }
@@ -32,7 +32,7 @@ class Proses{
 
   public function showUnit(){
 	$sql = "SELECT * FROM tb_unit, tb_apt
-	where tb_apt.kd_apt=tb_unit.kd_apt ORDER BY tb_apt.kd_apt";
+	where tb_apt.kd_apt=tb_unit.kd_apt and tb_unit.kd_unit !=0 ORDER BY tb_apt.kd_apt";
 	$query = $this->db->query($sql);
 	return $query;
   }
@@ -44,9 +44,9 @@ class Proses{
 	return $query;
   }
 
-  public function addReservasi($kd_apt, $kd_unit, $no_tlp, $check_in, $check_out, $nama){
-	$sql = "INSERT INTO tb_reservasi (kd_unit, kd_apt, check_in, check_out, no_tlp, nama)
-	VALUES ('$kd_unit', '$kd_apt', '$check_in', '$check_out', '$no_tlp', '$nama')";
+  public function addReservasi($kd_apt, $kd_unit, $no_tlp, $check_in, $check_out, $nama, $tgl){
+	$sql = "INSERT INTO tb_reservasi (kd_unit, kd_apt, check_in, check_out, no_tlp, nama, tgl_reservasi)
+	VALUES ('$kd_unit', '$kd_apt', '$check_in', '$check_out', '$no_tlp', '$nama', '$tgl')";
 	$query = $this->db->query($sql);
 	if(!$query){
 	  return "Failed";

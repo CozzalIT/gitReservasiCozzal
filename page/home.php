@@ -65,7 +65,8 @@
 										</div>
 										<div class="section_class_agileits sec-right">
 											<select name="unit" id="unit" required="">
-												<option value="0">-- Pilih Unit --</option>
+												<option value="">-- Pilih Unit --</option>
+												<option name='kd_unit' value='0'>Semua Unit</option>
 											</select>
 											<!--<div id="loading" style="margin-top: 15px;">
 												<img src="images/loading.gif" width="18"> <small>Loading...</small>

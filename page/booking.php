@@ -45,16 +45,25 @@ echo '
 										 $Proses = new Proses();
 										 $show = $Proses->Unitby_id($_GET['id']);
 										 $edit = $show->fetch(PDO::FETCH_OBJ);
+										 $apartemen = $edit->nama_apt;
+										 $aptkode = $edit->kd_apt;
+										 if (isset($_GET['kd_apt'])) 
+										 {
+											$show2 = $Proses->showApartemenID($_GET['kd_apt']);
+											$edit2 = $show2->fetch(PDO::FETCH_OBJ);
+											$apartemen = $edit2->nama_apt;
+											$aptkode = $edit2->kd_apt;
+										 }
 										 echo '
 										 <input type="text" name="kd_unit" value="'.$_GET['id'].'" class="hiden"/>
-										 <input type="text" name="kd_apt" value="'.$edit->kd_apt.'" class="hiden"/>
+										 <input type="text" name="kd_apt" value="'.$aptkode.'" class="hiden"/>
 											<div class="section_class_agileits sec-right">
 											  <label class="label">No Unit</label>
 											  <input type="text" name="no_unit" class="name agileits" value="'.$edit->no_unit.'" required="" disabled/>
 											</div>
 											<div class="section_class_agileits sec-right">
 											  <label class="label">Nama Apartemen</label>
-											  <input type="text"  name="nama_apt" class="name agileits" value="'.$edit->nama_apt.'" required="" disabled/>
+											  <input type="text"  name="nama_apt" class="name agileits" value="'.$apartemen.'" required="" disabled/>
 											</div>
 											<div class="section_class_agileits sec-right">
 											  <label class="label">Check In</label>

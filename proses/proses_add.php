@@ -8,8 +8,8 @@
 	  $check_out = $_POST['CO'];
 	  $no_tlp= $_POST['no_tlp'];
 	  $nama = $_POST['nama'];
-
-    $add = $proses->addReservasi($kd_apt, $kd_unit, $no_tlp, $check_in, $check_out, $nama);
+	  $tgl = date("Y-m-d");
+    $add = $proses->addReservasi($kd_apt, $kd_unit, $no_tlp, $check_in, $check_out, $nama, $tgl);
 
     if($add == "Success"){
 	   header("Location:../index.php?succes");
