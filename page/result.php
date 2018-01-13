@@ -12,15 +12,24 @@ function booked($str1,$str2)
 }
 
 if(isset($_POST['search']))
-{ 
+{
 	echo '
 <body>
-<header> <h1>Data Unit Tersedia</h1> </header>
-<br>
+<header> <h1 style="margin-bottom: 20px;">Data Unit Tersedia</h1> </header>
 <section>
 <br>
-<table>
-	<tr><th>No Unit</th><th>Nama Apartemen</th><th>Alamat</th><th>Harga Total</th><th>Action</th></tr>';
+<center>
+<div class="tab">
+<table class="result">
+	<thead>
+		<tr class="result">
+			<th class="result">No Unit</th>
+			<th class="result">Nama Apartemen</th>
+			<th class="result">Alamat</th>
+			<th class="result">Harga Total</th>
+			<th class="result">Action</th>
+		</tr>
+	</thead>';
 				  $Proses = new Proses();
 				  $CI2 = explode("/",$_POST['CI']);
 				  $CO2 = explode("/",$_POST['CO']);
@@ -29,7 +38,7 @@ if(isset($_POST['search']))
 				  $CO=$CO2[2]."-".$CO2[0]."-".$CO2[1];
 				  $jumlah_hari = (strtotime($CO) - strtotime($CI))/86400;
 				  $show = $Proses->showTransaksi($CI,$CO);
-				  $str = "_"; 
+				  $str = "_";
 				  while($data = $show->fetch(PDO::FETCH_OBJ)){
 						$str= $str."+".$data->kd_unit;
 				  };
@@ -41,21 +50,29 @@ if(isset($_POST['search']))
 						if ($week>5) $harga_sewa = $data2->h_sewa_we; else $harga_sewa = $data2->h_sewa_wd;
 						$harga_sewa = ($harga_sewa*$jumlah_hari)+($data2->h_sewa_wd*$ec);
 						echo "
-								<tr class=gradeC'>
-								<td>$data2->no_unit</td>
-								<td>$data2->nama_apt</td>
-								<td>$data2->alamat_apt</td>
-								<td>$harga_sewa</td>
-								<td>
-									<a class='btnn' href='index.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
-								</td>
-								</tr>";
+						  <tbody>
+								<tr class='result'>
+									<td class='result'>$data2->no_unit</td>
+									<td class='result'>$data2->nama_apt</td>
+									<td class='result'>$data2->alamat_apt</td>
+									<td class='result'>$harga_sewa</td>
+									<td class='result'>
+										<a class='btnn' href='index.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
+									</td>
+								</tr>
+							</tbody>";
 					}
 				  };
 				  echo "
+					<tr>
+					</tr>
+					<tr class='result'>
+						<td colspan='5' class='result'><b>*Total harga meliputi total biaya sewa ditambah ekstra charge</b></td>
+					</tr>
 </table>
+</div>
+</center>
 </section>
-<div class='keterangan'> *Total harga meliputi total biaya sewa ditambah ekstra charge </div>
 </body>
 </html>";
 }

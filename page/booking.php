@@ -34,11 +34,10 @@ echo '
 						});
 					});
 				</script>
-
-				<div class="tabs">
-					<div class="tab-right">
+<form action="proses/proses_add.php" method="post" class="agile_form">
+				<div class="tabs-booking">
+					<div class="tab-right-book">
 						<div class="w3l-sign-in">
-									<form action="proses/proses_add.php" method="post" class="agile_form">
 										<div class="list_agileits_w3layouts"> ';
 										 $ChI = explode("-",$_GET['tci']);
 										 $ChO = explode("-",$_GET['tco']);
@@ -47,7 +46,7 @@ echo '
 										 $edit = $show->fetch(PDO::FETCH_OBJ);
 										 $apartemen = $edit->nama_apt;
 										 $aptkode = $edit->kd_apt;
-										 if (isset($_GET['kd_apt'])) 
+										 if (isset($_GET['kd_apt']))
 										 {
 											$show2 = $Proses->showApartemenID($_GET['kd_apt']);
 											$edit2 = $show2->fetch(PDO::FETCH_OBJ);
@@ -73,24 +72,30 @@ echo '
 											  <label class="label">Check Out</label>
 											  <input type="text" name="CO_P" class="name agileits" value="'.$ChO[1]."/".$ChO[2]."/".$ChO[0].'" disabled required="" />
 											</div>
-											  <input type="text" name="CI" class="name agileits" value="'.$_GET['tci'].'" style="display:none" />	
+											  <input type="text" name="CI" class="name agileits" value="'.$_GET['tci'].'" style="display:none" />
 											  <input type="text" name="CO" class="name agileits" value="'.$_GET['tco'].'" style="display:none" />
-											<div class="section_class_agileits sec-right">
-											  <label class="label">Nama Lengkap</label>
-											  <input type="text" placeholder="Nama Lengkap" name="nama" class="name agileits" required=""/>
-											</div>
-											  <div class="section_class_agileits sec-right">
-											  <label class="label">Whatsapp</label>
-											  <input type="text" placeholder="Phone Number / Whatsapp" name="no_tlp" class="name agileits" required=""/>
-											</div>
-											<div class="submit">
-												<input type="submit" value="Kirim Permintaan" name="kirim">
-											</div>
 											<div class="clear"></div>
 										</div>
-									</form>
+
 								</div>
-					</div>
+					  </div>
+						<div class="tab-left-book">
+							<div class="list_agileits_w3layouts">
+								<div class="section_class_agileits sec-right">
+									<label class="label">Nama Lengkap</label>
+									<input type="text" placeholder="Nama Lengkap" name="nama" class="name agileits" required=""/>
+								</div>
+									<div class="section_class_agileits sec-right">
+									<label class="label">Whatsapp</label>
+									<input type="text" placeholder="Phone Number / Whatsapp" name="no_tlp" class="name agileits" required=""/>
+								</div>
+								<div class="submit">
+									<input type="submit" value="Kirim Permintaan" name="kirim">
+								</div>
+								</form>
+								<div class="clear"></div>
+							</div>
+						</div>
 					<div class="clear"></div>
 			</div>
 		</div>

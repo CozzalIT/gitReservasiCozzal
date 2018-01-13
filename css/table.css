@@ -1,24 +1,24 @@
-﻿table {
+﻿table.result {
     border-collapse: collapse;
     width: 75%;
-    
+
     margin-right: 80px;
     margin-left:80px;
 }
 
-th, td {
+th.result, td.result {
     text-align: left;
     padding: 8px;
-	border: 1px solid #dcdcdc;
+	border: 1px solid #56585b;
 }
 
-tr:nth-child(even){color : #ffffff;}
-tr:nth-child(odd){color : #ffffff;}
+tr.result:nth-child(even){color : #000000;background-color: #aeb4bf;}
+tr.result:nth-child(odd){color : #000000;background-color: #dee2e8;}
 
 
-th {background-color: #000000;color:#ffffff;text-align:center;}
-td {text-align:center;}
-.btnn{text-decoration:none;color:white; padding: 5px 15px 5px 15px; background-color:#602000;}
+th.result {background-color: #000000;color:#ffffff;text-align:center;}
+td.result {text-align:center;}
+.btnn{text-decoration:none;color:white; padding: 5px 15px 5px 15px; background-color:#f36a22;}
 .btnn:hover{text-decoration:none;color:white; padding: 3px 10px 3px 10px; background-color:#804000;}
 .hiden{display:none;}
 .keterangan{
