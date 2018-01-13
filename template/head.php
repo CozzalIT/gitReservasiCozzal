@@ -33,5 +33,9 @@
 	<!-- //Web-Fonts -->
 
   <!-- Data Tables -->
+  <script type="text/javascript" src="assets/DataTables/media/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/DataTables/media/js/jquery.dataTables.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/DataTables/media/css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="assets/DataTables/media/css/dataTables.bootstrap.css">
   <!-- //Data Tables -->
 </head>

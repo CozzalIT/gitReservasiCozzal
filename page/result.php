@@ -18,9 +18,9 @@ if(isset($_POST['search']))
 <header> <h1 style="margin-bottom: 20px;">Data Unit Tersedia</h1> </header>
 <section>
 <br>
-<center>
+<div class="tabs" style="padding-bottom: 10px;padding-top: 24px;">
 <div class="tab">
-<table class="result">
+<table class="result table table-striped table-bordered data" style="margin-top: 10px;padding-top: 15px;">
 	<thead>
 		<tr class="result">
 			<th class="result">No Unit</th>
@@ -29,7 +29,8 @@ if(isset($_POST['search']))
 			<th class="result">Harga Total</th>
 			<th class="result">Action</th>
 		</tr>
-	</thead>';
+	</thead>
+	<tbody>';
 				  $Proses = new Proses();
 				  $CI2 = explode("/",$_POST['CI']);
 				  $CO2 = explode("/",$_POST['CO']);
@@ -50,30 +51,34 @@ if(isset($_POST['search']))
 						if ($week>5) $harga_sewa = $data2->h_sewa_we; else $harga_sewa = $data2->h_sewa_wd;
 						$harga_sewa = ($harga_sewa*$jumlah_hari)+($data2->h_sewa_wd*$ec);
 						echo "
-						  <tbody>
+
 								<tr class='result'>
 									<td class='result'>$data2->no_unit</td>
 									<td class='result'>$data2->nama_apt</td>
 									<td class='result'>$data2->alamat_apt</td>
-									<td class='result'>$harga_sewa</td>
+									<td class='result'>".number_format($harga_sewa, 0, '.', '.')." IDR</td>
 									<td class='result'>
 										<a class='btnn' href='index.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
 									</td>
 								</tr>
-							</tbody>";
+							";
 					}
 				  };
 				  echo "
-					<tr>
-					</tr>
+					</tbody>
 					<tr class='result'>
 						<td colspan='5' class='result'><b>*Total harga meliputi total biaya sewa ditambah ekstra charge</b></td>
 					</tr>
 </table>
 </div>
-</center>
+</div>
 </section>
 </body>
+<script type='text/javascript'>
+	$(document).ready(function(){
+		$('.data').DataTable();
+	});
+</script>
 </html>";
 }
 ?>
