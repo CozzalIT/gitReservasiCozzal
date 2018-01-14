@@ -21,10 +21,10 @@
 							$info.show();
 						}
 					});
-					
+
 
 					if ($('#F').val()=="True") swal("Permintaan dikirim","Silahkan tunggu balasan dari kami","success");
-					
+
 					$('#verticalTab').easyResponsiveTabs({
 						type: 'vertical',
 						width: 'auto',
@@ -37,14 +37,29 @@
 
 				<div class="tab-left">
 					<ul class="resp-tabs-list">
-						<li class="resp-tab-item"><i class="fa fa-building" aria-hidden="true"></i>Apartemen</li>
 						<li class="resp-tab-item"><i class="fa fa-calendar" aria-hidden="true"></i>Check In</li>
+						<li class="resp-tab-item"><i class="fa fa-building" aria-hidden="true"></i>Apartemen</li>
 						<li class="resp-tab-item"><i class="fa fa-phone" aria-hidden="true"></i>Contact Us</li>
 					</ul>
 				</div>
 
 				<div class="tab-right">
 					<div class="resp-tabs-container">
+						<div class="tab-1 resp-tab-content">
+							<div class="register agileits">
+								<form action="" method="post" class="agile_form">
+									<div class="section_class_agileits sec-right">
+										<input placeholder="Check in date" name="CI" class="date" id="datepicker3" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+										<input placeholder="Check out date" name="CO" class="date" id="datepicker4" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+										<input type="text" name="day" class="name agileits" id="jumlah_hari" disabled />
+										<input type="number" placeholder="Jumlah Tamu" name="jumlah_tamu" min="1" class="number1" required=""/>
+									</div>
+									<div class="submit">
+										<input type="submit" value="search" name="search">
+									</div>
+								</form>
+							</div>
+						</div>
 						<div class="tab-1 resp-tab-content">
 							<div class="w3l-sign-in">
 								<form action="" method="post" class="agile_form">
@@ -80,7 +95,7 @@
 									<input type="text" name="day" class="name agileits" id="jumlah_harii2" disabled />
 									<div class="list_agileits_w3layouts">
 										<div class="section_class_agileits sec-right">
-											
+
 										</div>
 										<div class="clear"></div>
 									</div>
@@ -90,21 +105,6 @@
 								</form>
 							</div>
 						</div>
-						<div class="tab-1 resp-tab-content">
-							<div class="register agileits">
-								<form action="" method="post" class="agile_form">
-									<div class="section_class_agileits sec-right">
-										<input placeholder="Check in date" name="CI" class="date" id="datepicker3" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
-										<input placeholder="Check out date" name="CO" class="date" id="datepicker4" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
-										<input type="text" name="day" class="name agileits" id="jumlah_hari" disabled />
-										<input type="number" placeholder="Jumlah Tamu" name="jumlah_tamu" min="1" class="number1" required=""/>
-									</div>
-									<div class="submit">
-										<input type="submit" value="search" name="search">
-									</div>
-								</form>
-							</div>
-							</div>
 						<div class="tab-1 resp-tab-content gallery-images">
 							<div class="wthree-subscribe">
 								<form action="#" method="post" class="agile_form">
