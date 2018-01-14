@@ -67,15 +67,16 @@
 										<div class="section_class_agileits sec-left">
 											<select id="apartemen" name="apartemen" required="">
 												<option value="">-- Pilih Apartemen --</option>
-												<option value="0">Semua Apartemen</option>
 												<?php
 													$Proses = new Proses();
 													$show = $Proses->showApartemen();
 													while($data = $show->fetch(PDO::FETCH_OBJ)){
 														echo "<option value='$data->kd_apt'>$data->nama_apt</option>";
 													}
-													echo '<input type="text" name="day" id="F" style="display:none" value='.$GLOBALS['hasilbooking'].' disabled />
-													</select>';
+													echo '
+													<option value="0">Semua Apartemen</option>
+													</select>
+													<input type="text" name="day" id="F" style="display:none" value='.$GLOBALS['hasilbooking'].' disabled />';
 												?>
 										</div>
 										<div class="section_class_agileits sec-right">

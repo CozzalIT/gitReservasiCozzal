@@ -20,13 +20,15 @@ if ($kd_apt == 0){
 else{
 	// Set defaultnya dengan tag option Pilih
 	$html = "<option value=''>-- Pilih Unit --</option>";
-	$html .= "<option name='kd_unit' value='0'>Semua Unit</option>";
+
 	$Proses = new Proses();
 	$show = $Proses->showUnit();
 	while($data = $show->fetch(PDO::FETCH_OBJ)){
 		if ($data->kd_apt==$kd_apt)
 		$html .= "<option name='kd_unit' value='$data->kd_unit'>$data->no_unit - $data->nama_apt</option>"; // Tambahkan tag option ke variabel $html
 	}
+
+	$html .= "<option name='kd_unit' value='0'>Semua Unit</option>";
 }
 
 $callback = array('data_unit'=>$html); // Masukan variabel html tadi ke dalam array $callback dengan index array : data_kota
