@@ -49,7 +49,7 @@ if(isset($_POST['search']))
 					{
 						$ec=0; if($_POST['jumlah_tamu']>5) $ec=$_POST['jumlah_tamu']-5; //ec = orag yg dhitung ektra charge
 						if ($week>5) $harga_sewa = $data2->h_sewa_we; else $harga_sewa = $data2->h_sewa_wd;
-						$harga_sewa = ($harga_sewa*$jumlah_hari)+($data2->h_sewa_wd*$ec);
+						$harga_sewa = ($harga_sewa*$jumlah_hari)+($data2->ekstra_charge*$ec);
 						echo "
 
 								<tr class='result'>
