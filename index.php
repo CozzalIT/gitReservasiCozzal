@@ -12,7 +12,7 @@ global $hasilbooking;
 	$GLOBALS['hasilbooking']="True";
 	include "page/home.php";
   }
-
+ 
   if(isset($_GET['tci'])&&isset($_GET['tco'])&&isset($_GET['id'])){
     include "page/booking.php";
   }
