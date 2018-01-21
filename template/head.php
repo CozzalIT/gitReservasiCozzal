@@ -4,7 +4,6 @@
 <head>
 
 	<title>Reservasi Cozzal</title>
-
 	<!-- For-Mobile-Apps -->
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,4 +37,5 @@
 	<link rel="stylesheet" type="text/css" href="assets/DataTables/media/css/jquery.dataTables.css">
 	<link rel="stylesheet" type="text/css" href="assets/DataTables/media/css/dataTables.bootstrap.css">
   <!-- //Data Tables -->
+
 </head>

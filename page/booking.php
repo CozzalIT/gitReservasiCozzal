@@ -1,8 +1,5 @@
 <?php
 echo '
-<!DOCTYPE html>
-<html>
-<body>
 	<h1>Reservasi Cozzal</h1>
 
 	<div class="container">

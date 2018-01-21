@@ -18,8 +18,8 @@ if(isset($_POST['search']))
 <header> <h1 style="margin-bottom: 20px;">Data Unit Tersedia</h1> </header>
 <section>
 <br>
-<div class="tabs" style="padding-bottom: 10px;padding-top: 24px;margin-left: 120px;margin-right: 120px;">
-<div class="tab">
+<div class="tabs" style="padding-bottom: 10px;padding-top: 24px;">
+<div class="tab" style="overflow-x:auto; overflow-y:auto;">
 <table class="result table table-striped table-bordered data" style="margin-top: 10px;padding-top: 15px;">
 	<thead>
 		<tr class="result">
