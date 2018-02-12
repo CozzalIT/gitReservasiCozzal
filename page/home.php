@@ -51,8 +51,8 @@
 									<div class="section_class_agileits sec-right">
 										<input placeholder="Check in date" name="CI" class="date" id="datepicker3" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 										<input placeholder="Check out date" name="CO" class="date" id="datepicker4" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
-										<input type="text" name="day" class="name agileits" id="jumlah_hari" disabled />
-										<input type="number" placeholder="Jumlah Tamu" name="jumlah_tamu" min="1" class="number1" required=""/>
+										<input type="text" name="day" class="name agileits number1" min="1" max="1000" id="jumlah_hari"  />
+										<input type="number" placeholder="Jumlah Tamu" name="jumlah_tamu" min="1" class="number1" />
 									</div>
 									<div class="submit">
 										<input type="submit" value="search" name="search">
@@ -65,7 +65,7 @@
 								<form action="" method="post" class="agile_form">
 									<div class="list_agileits_w3layouts">
 										<div class="section_class_agileits sec-left">
-											<select id="apartemen" name="apartemen" required="">
+											<select id="apartemen" name="apartemen" onchange="$('#price_div').hide();" required="">
 												<option value="">-- Pilih Apartemen --</option>
 												<?php
 													$Proses = new Proses();
@@ -82,7 +82,7 @@
 										<div class="section_class_agileits sec-right">
 											<select name="unit" id="unit" required="">
 												<option value="">-- Pilih Unit --</option>
-												<option name='kd_unit' value='0'>Semua Unit</option>
+												<option name='kd_unit' id="unit" value='0'>Semua Unit</option>
 											</select>
 											<!--<div id="loading" style="margin-top: 15px;">
 												<img src="images/loading.gif" width="18"> <small>Loading...</small>
@@ -90,15 +90,23 @@
 										</div>
 										<div class="clear"></div>
 									</div>
-									<!-- <label class="label">Check In</label> -->
-									<input placeholder="Check In" class="date" id="check_in" name="check_in" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
-									<input placeholder="Check Out" class="date" id="check_out" name="check_out" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
-									<input type="text" name="day" class="name agileits" id="jumlah_harii2" disabled />
-									<div class="list_agileits_w3layouts">
-										<div class="section_class_agileits sec-right">
-
-										</div>
-										<div class="clear"></div>
+									<div class="section_class_agileits sec-right">
+										<label class="label" >Check In</label>
+										<input placeholder="bulan/tanggal/tahun" class="date" id="check_in" name="check_in" type="text" value="" required=""/>
+									</div>
+									<div class="section_class_agileits sec-right">
+										<label class="label" >Check Out</label>
+										<input placeholder="bulan/tanggal/tahun" class="date" id="check_out" name="check_out" type="text" value="" required=""/>
+									</div>
+									<div id="jumhar2_div" class="section_class_agileits sec-right">
+										<label class="label" >Jumlah hari</label>
+										<input type="text" name="day" min="1" max="1000" class="name agileits number1" id="jumlah_harii2" />
+									</div>
+									<div id="price_div" class="section_class_agileits sec-right">
+										<label class="label" >Harga Normal Per Malam</label>
+										<input type="text" class="name agileits" id="price" disabled/>
+									</div>
+									<div class="section_class_agileits sec-right">
 									</div>
 									<div class="submit">
 										<input type="submit" name="permintaan" value="Kirim Permintaan">

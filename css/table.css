@@ -18,11 +18,44 @@ tr.result:nth-child(odd){color : #000000;background-color: #dee2e8;}
 
 th.result {background-color: #000000;color:#ffffff;text-align:center;}
 td.result {text-align:center;}
-.btnn{text-decoration:none;color:white; padding: 5px 15px 5px 15px; background-color:#f36a22;}
-.btnn:hover{text-decoration:none;color:white; padding: 3px 10px 3px 10px; background-color:#804000;}
+#btn1{text-decoration:none;color:white; padding: 5px 15px 5px 15px; background-color:#f36a22;}
+#btn1:hover{text-decoration:none;color:white; padding: 3px 10px 3px 10px; background-color:#804000;}
+#btn2{text-decoration:none;color:white; padding: 5px 15px 5px 15px; background-color:#2936b7;}
+#btn2:hover{text-decoration:none;color:white; padding: 3px 10px 3px 10px; background-color:#0c177a;}
 .hiden{display:none;}
 .keterangan{
     margin-right: 150px;
    margin-top:10px;  margin-left:80px;
    color:red;  padding-left=20px; padding-top=20px;padding-buttom=20px;
    background-color:black;}
+
+#popup{
+  width:100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.7);
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.window {
+  width: 90%;
+  height: 80%;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  margin: 5% auto;
+}
+
+.window h2 {
+  margin: 0px 0 0 0;
+}
+
+#popup:target {visibility: visible;}
+
+
+

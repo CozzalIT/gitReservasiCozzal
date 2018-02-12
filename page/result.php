@@ -48,7 +48,7 @@ if(isset($_POST['search']))
 					if (booked($str,$data2->kd_unit)!="Benar")
 					{
 						$ec=0; if($_POST['jumlah_tamu']>5) $ec=$_POST['jumlah_tamu']-5; //ec = orag yg dhitung ektra charge
-						if ($week>5) $harga_sewa = $data2->h_sewa_we; else $harga_sewa = $data2->h_sewa_wd;
+						if ($week==1 || $week==7) $harga_sewa = $data2->h_sewa_we; else $harga_sewa = $data2->h_sewa_wd;
 						$harga_sewa = ($harga_sewa*$jumlah_hari)+($data2->ekstra_charge*$ec);
 						echo "
 
@@ -58,7 +58,8 @@ if(isset($_POST['search']))
 									<td class='result'>$data2->alamat_apt</td>
 									<td class='result'>".number_format($harga_sewa, 0, '.', '.')." IDR</td>
 									<td class='result'>
-										<a class='btnn' href='index.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
+										<a id='btn1' href='index.php?tci=$CI&tco=$CO&id=$data2->kd_unit'>Booking Sekarang</a>
+										<a id='btn2' href='#popup'>Lihat Detail</a>
 									</td>
 								</tr>
 							";
@@ -73,6 +74,12 @@ if(isset($_POST['search']))
 </div>
 </div>
 </section>
+	<div id='popup'>
+		<div class='window'>
+			<a href='#' class='close-button' title='Close'>X</a>
+			<h2> Judul here </h2>
+		</div>
+	</div>
 </body>
 <script type='text/javascript'>
 	$(document).ready(function(){

@@ -17,15 +17,19 @@ class Proses{
   }
 
   public function showTransaksiUnit($kd_unit, $kd_apt){
-    $sql = "SELECT * from tb_transaksi where kd_unit='$kd_unit' and kd_apt='$kd_apt'";
+    $sql = "SELECT * from tb_transaksi";
+    if($kd_apt!="0" || $kd_unit!="0") $sql." where";
+    if($kd_apt!="0") $sql = $sql." kd_unit='$kd_unit'";
+    if($kd_apt!="0" && $kd_unit!="0") $sql." and";    
+    if($kd_apt!="0") $sql = $sql." kd_apt='$kd_apt'"; 
     $query = $this->db->query($sql);
     return $query;
   }
 
   public function showTransaksi($CI,$CO){
   	$sql = "SELECT * from tb_transaksi where (check_in<='$CI' and check_out>='$CO')
-  	or (check_in>='$CI' and check_in<='$CO')
-  	or (check_out>='$CI' and check_out<='$CO')" ;
+  	or (check_in>='$CI' and check_in<'$CO')
+  	or (check_out>'$CI' and check_out<='$CO')" ;
   	$query = $this->db->query($sql);
   	return $query;
   }

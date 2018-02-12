@@ -7,8 +7,9 @@
 		<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 			<div class="tabs-konfirmasi">
         <?php
-        $unit = $_POST['unit'];
-		$apt = $_POST['apartemen'];
+        $kd_unit = $_POST['unit'];
+        $unit = explode('*', $kd_unit);
+		    $apt = $_POST['apartemen'];
 
         $check_in = explode("/",$_POST['check_in']);
         $check_out = explode("/",$_POST['check_out']);
@@ -16,11 +17,11 @@
         $check_out_mod = $check_out[2]."-".$check_out[0]."-".$check_out[1];
 
         $Proses = new Proses(); $hasil = "Kosong";
-        $show = $Proses->showTransaksiUnit($unit,$apt);
+        $show = $Proses->showTransaksiUnit($unit[0],$apt);
         while($data = $show->fetch(PDO::FETCH_OBJ)){
           if (($data->check_in <= $check_in_mod and $data->check_out >= $check_out_mod)
-            or ($data->check_in >= $check_in_mod and $data->check_in <= $check_out_mod)
-            or ($data->check_out >= $check_in_mod and $data->check_out <= $check_out_mod) ){
+            or ($data->check_in >= $check_in_mod and $data->check_in < $check_out_mod)
+            or ($data->check_out > $check_in_mod and $data->check_out <= $check_out_mod) ){
               $hasil = "Terisi";
           }
         }

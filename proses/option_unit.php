@@ -12,10 +12,8 @@ if ($kd_apt == 0){
 	$Proses = new Proses();
 	$show = $Proses->showUnit();
 	while($data = $show->fetch(PDO::FETCH_OBJ)){
-		$html .= "<option name='kd_unit' value='$data->kd_unit'>$data->no_unit - $data->nama_apt</option>"; // Tambahkan tag option ke variabel $html
+		$html .= "<option name='kd_unit' value='$data->kd_unit"."*"."$data->h_sewa_wd"."*"."$data->h_sewa_we"."'>$data->no_unit - $data->nama_apt</option>"; // Tambahkan tag option ke variabel $html
 	}
-
-
 }
 else{
 	// Set defaultnya dengan tag option Pilih
@@ -25,7 +23,7 @@ else{
 	$show = $Proses->showUnit();
 	while($data = $show->fetch(PDO::FETCH_OBJ)){
 		if ($data->kd_apt==$kd_apt)
-		$html .= "<option name='kd_unit' value='$data->kd_unit'>$data->no_unit - $data->nama_apt</option>"; // Tambahkan tag option ke variabel $html
+		$html .= "<option name='kd_unit' value='$data->kd_unit"."*"."$data->h_sewa_wd"."*"."$data->h_sewa_we"."'>$data->no_unit - $data->nama_apt</option>"; // Tambahkan tag option ke variabel $html
 	}
 
 	$html .= "<option name='kd_unit' value='0'>Semua Unit</option>";
