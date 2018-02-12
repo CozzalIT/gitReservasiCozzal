@@ -21,15 +21,15 @@
         while($data = $show->fetch(PDO::FETCH_OBJ)){
           if (($data->check_in <= $check_in_mod and $data->check_out >= $check_out_mod)
             or ($data->check_in >= $check_in_mod and $data->check_in < $check_out_mod)
-            or ($data->check_out > $check_in_mod and $data->check_out <= $check_out_mod) ){
+            or ($data->check_out > $check_in_mod and $data->check_out <= $check_out_mod)){
               $hasil = "Terisi";
           }
         }
         if ($hasil == "Kosong"){
-          if ($unit==0)
-		  header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit.'&kd_apt='.$apt);    
+          if ($unit[0]==0)
+		  header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit[0].'&kd_apt='.$apt);    
 		  else
-		  header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit);
+		  header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit[0]);
 		  }
 		  else  
 		  echo "

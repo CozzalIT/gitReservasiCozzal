@@ -92,11 +92,11 @@
 									</div>
 									<div class="section_class_agileits sec-right">
 										<label class="label" >Check In</label>
-										<input placeholder="bulan/tanggal/tahun" class="date" id="check_in" name="check_in" type="text" value="" required=""/>
+										<input placeholder="mm/dd/yyyy" class="date" id="check_in" name="check_in" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 									</div>
 									<div class="section_class_agileits sec-right">
 										<label class="label" >Check Out</label>
-										<input placeholder="bulan/tanggal/tahun" class="date" id="check_out" name="check_out" type="text" value="" required=""/>
+										<input placeholder="mm/dd/yyyy" class="date" id="check_out" name="check_out" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 									</div>
 									<div id="jumhar2_div" class="section_class_agileits sec-right">
 										<label class="label" >Jumlah hari</label>

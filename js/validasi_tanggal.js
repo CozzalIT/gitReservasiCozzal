@@ -186,14 +186,6 @@ $("#unit").change(function(){
 			totext(this, this.id);
 	});
 
-	$("#jumlah_harii2").touchstart(function(){
-       tonumber(this);
-	});	
-
-	$("#jumlah_harii2").touchend(function(){
-       totext(this, this.id);
-	});
-
 //jumlahhari changer
 
 	$("#jumlah_hari").change(function(){
