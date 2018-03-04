@@ -690,6 +690,10 @@ input.name,input.date {
 .container {
     width: 74%;
 }
+.tab-right-book, .tab-left-book{
+	float: none;
+	width: 100%;
+}
 }
 @media screen and (max-width: 736px) {
 .container {
@@ -862,7 +866,7 @@ h1 {
 }
 .resp-tab-item {
     display: inline-block;
-    width: 14%;
+    width: 20%;
 }
 }
 /*--- //Responsive Code ---*/
