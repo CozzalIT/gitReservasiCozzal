@@ -99,6 +99,17 @@
                   <option value="Sewa">Sewa</option>
                 </select>
               </div>
+              <div class="section_class_agileits sec-right">
+                <label class="label">Tipe</label>
+                <select name="tipe" style="margin-top: 13.6px;">
+                  <option>-- Tipe Unit --</option>
+                  <option value="1BR">1BR</option>
+                  <option value="2BR">2BR</option>
+                  <option value="3BR">3BR</option>
+                  <option value="Studio">Studio</option>
+                </select>
+              </div>
+              <br>
               <div class="submit">
                 <input type="submit" value="Kirim Permintaan" name="requestListing">
               </div>
