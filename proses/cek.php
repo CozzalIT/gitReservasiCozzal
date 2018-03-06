@@ -25,6 +25,12 @@
               $hasil = "Terisi";
           }
         }
+      if($hasil=="Kosong"){
+          $show = $Proses->showBlocked($check_in_mod,$check_out_mod);
+          while($data = $show->fetch(PDO::FETCH_OBJ)){
+              if($data->kd_unit==$unit[0]) $hasil = "Terisi";   
+          }
+      }
         if ($hasil == "Kosong"){
           if ($unit[0]==0)
 		  header('Location:index.php?tci='.$check_in_mod.'&tco='.$check_out_mod.'&id='.$unit[0].'&kd_apt='.$apt);    

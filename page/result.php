@@ -11,6 +11,16 @@ function booked($str1,$str2)
 	}
 }
 
+function hargasewa($hwd, $hwe, $week, $j_hari){
+	$we =0;
+	if($week>5){
+		$we = 8-$week;
+		if($j_hari==1) $we=1;
+	}
+	$wd=$j_hari-$we;	
+	return ($hwe*$we)+($hwd*$wd);
+}
+
 if(isset($_POST['search']))
 {
 	echo '
@@ -40,16 +50,15 @@ if(isset($_POST['search']))
 				  $jumlah_hari = (strtotime($CO) - strtotime($CI))/86400;
 				  $show = $Proses->showTransaksi($CI,$CO);
 				  $str = "_";
-				  while($data = $show->fetch(PDO::FETCH_OBJ)){
-						$str= $str."+".$data->kd_unit;
-				  };
+				  while($data = $show->fetch(PDO::FETCH_OBJ)){$str= $str."+".$data->kd_unit;}
+				  $show = $Proses->showBlocked($CI,$CO);
+				  while($data = $show->fetch(PDO::FETCH_OBJ)){$str= $str."+".$data->kd_unit;}
 				  $show2 = $Proses->showUnit();
 				  while($data2 = $show2->fetch(PDO::FETCH_OBJ)){
 					if (booked($str,$data2->kd_unit)!="Benar")
 					{
 						$ec=0; if($_POST['jumlah_tamu']>5) $ec=$_POST['jumlah_tamu']-5; //ec = orag yg dhitung ektra charge
-						if ($week==1 || $week==7) $harga_sewa = $data2->h_sewa_we; else $harga_sewa = $data2->h_sewa_wd;
-						$harga_sewa = ($harga_sewa*$jumlah_hari)+($data2->ekstra_charge*$ec);
+						$harga_sewa = hargasewa($data2->h_sewa_wd, $data2->h_sewa_we, $week, $jumlah_hari)+($data2->ekstra_charge*$ec);
 						echo "
 
 								<tr class='result'>

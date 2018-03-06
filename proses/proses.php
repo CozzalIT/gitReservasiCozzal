@@ -34,6 +34,15 @@ class Proses{
   	return $query;
   }
 
+  public function showBlocked($CI,$CO){
+    $sql = "SELECT kd_unit from tb_mod_calendar 
+    where ((start_date<='$CI' and end_date>='$CO')
+    or (start_date>='$CI' and start_date<'$CO')
+    or (end_date>'$CI' and end_date<='$CO'))" ;
+    $query = $this->db->query($sql);
+    return $query;
+  } 
+
   public function showUnit(){
   	$sql = "SELECT * FROM tb_unit, tb_apt
   	where tb_apt.kd_apt=tb_unit.kd_apt and tb_unit.kd_unit !=0 ORDER BY tb_apt.kd_apt";
